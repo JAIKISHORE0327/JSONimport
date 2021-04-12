@@ -1,0 +1,14 @@
+function myFunction(){
+  var res =UrlFetchApp.fetch("https://jsonplaceholder.typicode.com/posts");
+  var content =res.getContentText();
+  Logger.log(res);
+}
+
+
+function ImportJSON(url,xpath){
+  var res =UrlFetchApp.fetch(url);
+  var content = res.getContentText();
+  var json = JSON.parse(content);
+  var endres = json[xpath];
+  return endres
+}
